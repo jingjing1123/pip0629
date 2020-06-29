@@ -1,0 +1,26 @@
+node() {  
+    stage('构建') { 
+        // 
+        echo 'build'
+    }
+    stage('测试') { 
+        // test
+        echo 'test'
+		//bat label: '', script: 'netstat -ano |findstr 8080'
+		//bat  'robot -P . tc'
+		bat 'netstat -ano |findstr 8080'
+    }
+    stage('部署') { 
+        // 
+       echo  'deploy'
+    }
+    stage('验收') { 
+        // 
+        echo 'test'
+		mail bcc: '', body: 'test  pip  ', cc: '', from: 'zzjing1224@163.com', replyTo: '', subject: 'test', to: '2595175761@qq.com'
+    }
+	}
+	
+
+
+
